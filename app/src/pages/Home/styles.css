@@ -1,0 +1,9 @@
+.text-info{
+    text-align: center;
+    font-size: var(--third-text-size);
+    margin-bottom: 44px;
+}
+
+.text-info a{
+    color: var(--primary-color);
+}

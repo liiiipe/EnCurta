@@ -1,7 +1,9 @@
 :root {
-  /* --primary-color: #34CB79;
-  --text-color: #6C6C80; */
-  --title-color: #707070;
+  --primary-text-size: 32px;
+  --secondary-text-size: 22px;
+  --third-text-size: 28px;
+  --primary-color: #707070;
+  --secondary-color: rgb(245, 245, 245);
 }
 
 * {
@@ -21,8 +23,8 @@ body, input, button {
   /* font-family: Roboto, Arial, Helvetica, sans-serif; */
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: var(--title-color);
+h1, h2, h3, h4, h5, h6, label, p {
+  color: var(--primary-color);
 }
 
 .background{
@@ -34,21 +36,95 @@ h1, h2, h3, h4, h5, h6 {
 
 .card{
   background-color: #ffffff;
-  width: 600px;
+  width: 715px;
   height: 85vh;
-  border-radius: 4%;
+  border-radius: 39px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 }
 
 .logo{
   display: flex;
   align-items: center;
+  justify-content: center;
   font-family: 'Segoe UI Semibold', sans-serif;
   margin-top: 5%;
+  cursor: default;
 }
 
 .logo h1{
-  margin-right: 10px;
+  font-size: 60px;
+  margin: 0 10px 0 0;
+}
+
+@media (max-width: 600px){
+  :root {
+    --primary-text-size: 28px;
+    --secondary-text-size: 14px;
+    --third-text-size: 18px;
+  }
+
+  .logo h1{
+    font-size: 45px;
+  }
+
+  .card{
+    min-height: 95vh;
+    border-radius: 19px;
+  }
+}
+
+@media (max-height: 360px){
+  .card{
+    height: auto;
+  }
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+form div{
+  margin-bottom: 4%;
+}
+
+form p{
+  font-size: var(--primary-text-size);
+  font-weight: bold;
+}
+form button{
+  background-color: rgb(112, 112, 112);
+  color: #FFF;
+  font-size: var(--third-text-size);
+  font-weight: bold;
+  border: 0;
+  border-radius: 8px;
+  margin-top: 20px;
+  transition: background-color 0.2s;
+  cursor: pointer;
+  width: 260px;
+  height: 56px;
+  outline: none;
+}
+form button:hover{
+  background-color: rgb(58, 58, 58);
+}
+
+@media (max-width: 600px){
+  form button{
+      width: 200px;
+      height: 46px;
+  }
+}
+
+.alert{
+  font-size: var(--third-text-size);
+  color: #FF6A6A;
+  margin-bottom: 24px;
+  text-align: center;
+  visibility: hidden;
 }
